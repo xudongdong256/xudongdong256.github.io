@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
+  <meta name="description" content="Spring2.5的基于注解的注入注解版自动绑定(@Autowired)可以让容器知道需要为当前类注入哪些依赖，按照类型进行匹配。 Qualifier的陪伴如果找到两个或者多个同一类型的实例对象，Ioc容器不知道具体需要将哪个对象注入给当前对象，可以使用@Qualifier注解来指定需要哪个一个对象。@Qualifier(“要指定的类的bean的id”)，byName的自动绑定的注解版 使用JSR">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AOP概述">
-<meta property="og:url" content="http://xudongdong256.com/2019/05/12/AOP概述/index.html">
+<meta property="og:title" content="Spring2.5的基于注解的注入">
+<meta property="og:url" content="http://xudongdong256.com/2019/05/12/Spring2.5的基于注解的注入/index.html">
 <meta property="og:site_name" content="xudongdong">
-<meta property="og:description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
+<meta property="og:description" content="Spring2.5的基于注解的注入注解版自动绑定(@Autowired)可以让容器知道需要为当前类注入哪些依赖，按照类型进行匹配。 Qualifier的陪伴如果找到两个或者多个同一类型的实例对象，Ioc容器不知道具体需要将哪个对象注入给当前对象，可以使用@Qualifier注解来指定需要哪个一个对象。@Qualifier(“要指定的类的bean的id”)，byName的自动绑定的注解版 使用JSR">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T10:54:36.331Z">
+<meta property="og:updated_time" content="2019-05-23T11:07:01.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AOP概述">
-<meta name="twitter:description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
+<meta name="twitter:title" content="Spring2.5的基于注解的注入">
+<meta name="twitter:description" content="Spring2.5的基于注解的注入注解版自动绑定(@Autowired)可以让容器知道需要为当前类注入哪些依赖，按照类型进行匹配。 Qualifier的陪伴如果找到两个或者多个同一类型的实例对象，Ioc容器不知道具体需要将哪个对象注入给当前对象，可以使用@Qualifier注解来指定需要哪个一个对象。@Qualifier(“要指定的类的bean的id”)，byName的自动绑定的注解版 使用JSR">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/AOP概述/">
+  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/Spring2.5的基于注解的注入/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>AOP概述 | xudongdong</title>
+  <title>Spring2.5的基于注解的注入 | xudongdong</title>
   
 
 
@@ -324,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/AOP概述/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/Spring2.5的基于注解的注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AOP概述
+          <h1 class="post-title" itemprop="name headline">Spring2.5的基于注解的注入
 
               
             
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 18:54:36" itemprop="dateModified" datetime="2019-05-23T18:54:36+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-23 19:07:01" itemprop="dateModified" datetime="2019-05-23T19:07:01+08:00">2019-05-23</time>
               
             
           </span>
@@ -436,17 +436,14 @@
       
 
       
-        <h1 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP 面向切面编程"></a>AOP 面向切面编程</h1><p>在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，<br>所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。<br>使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。<br>AOP组件集成到OOP组件的过程叫做织入过程。</p>
-<h1 id="Java平台上AOP的实现机制"><a href="#Java平台上AOP的实现机制" class="headerlink" title="Java平台上AOP的实现机制"></a>Java平台上AOP的实现机制</h1><h2 id="动态代理-Spring默认使用"><a href="#动态代理-Spring默认使用" class="headerlink" title="动态代理  Spring默认使用"></a>动态代理  Spring默认使用</h2><p>为相应的接口生成对应的代理对象，由代理对象将横切关注点逻辑封装到InvocationHandler中，系统运行时期，将横切逻辑切入到相应的代理类中，<br>然后以动态代理的逻辑工作，就把系统需求和业务需求整合到一起了。 缺点 运行期间使用反射，对于编译后的静态类的执行性能不好  只针对接口</p>
-<h2 id="动态字节码增强-Spring第二种使用"><a href="#动态字节码增强-Spring第二种使用" class="headerlink" title="动态字节码增强 Spring第二种使用"></a>动态字节码增强 Spring第二种使用</h2><p>使用GGLIB工具库，在需要织入横切逻辑的类在运行期间，就可以为其生成子类，将横切逻辑加入到这些子类中，程序执行的是这些动态生成的子类。<br>final类无法子类化扩展</p>
-<h2 id="Joinpoint-连接点"><a href="#Joinpoint-连接点" class="headerlink" title="Joinpoint 连接点"></a>Joinpoint 连接点</h2><p>进行织入操作的执行点</p>
-<h2 id="PointCut"><a href="#PointCut" class="headerlink" title="PointCut"></a>PointCut</h2><p>哪些Joinpoint需要织入横切逻辑的信息</p>
-<h3 id="有三种表述方式"><a href="#有三种表述方式" class="headerlink" title="有三种表述方式"></a>有三种表述方式</h3><p>1.直接指定JoinPoint所在的方法名称<br>2.正则表达式<br>3.PointCut表述语言</p>
-<h2 id="PointCut可以进行逻辑运算"><a href="#PointCut可以进行逻辑运算" class="headerlink" title="PointCut可以进行逻辑运算"></a>PointCut可以进行逻辑运算</h2><h3 id="Advice"><a href="#Advice" class="headerlink" title="Advice"></a>Advice</h3><p>代表织入到Joinpoint的横切逻辑<br>1.BeforeAdvice在Jointpoint指定位置之前执行，一般不会打断程序的执行流程，除非在BeforeAdvice抛出异常<br>2.AfterAdvice在连接点之后执行的advice</p>
-<h3 id="有三种"><a href="#有三种" class="headerlink" title="有三种"></a>有三种</h3><p>1.After returning Advice 在正常的流程执行完之后，才会执行，没有异常<br>2.After throwing Advice 在抛出异常的情况下才会执行<br>3.After Advice 无论程序怎么样在程序结束后都会执行 相当于finally<br>3.AroundAdvice 在连接点执行的前后执行<br>4.Introduction 为原有的对象添加新特性或者新行为  性能高 对象在使用的时候 已经编译好了织入完成</p>
-<h2 id="Aspect"><a href="#Aspect" class="headerlink" title="Aspect"></a>Aspect</h2><p>是对横切关注点模块化封装的AOP概念实体 包含多个 PointCut和Advice</p>
-<h3 id="织入和织入器"><a href="#织入和织入器" class="headerlink" title="织入和织入器"></a>织入和织入器</h3><p>将横切关注点的逻辑集成到程序中叫做织入<br>执行织入操作的叫做织入器 ProxyFactory SpringAOP最通用的织入器</p>
-<h3 id="目标对象"><a href="#目标对象" class="headerlink" title="目标对象"></a>目标对象</h3><p>在织入过程中被织入的对象叫做目标对象</p>
+        <h1 id="Spring2-5的基于注解的注入"><a href="#Spring2-5的基于注解的注入" class="headerlink" title="Spring2.5的基于注解的注入"></a>Spring2.5的基于注解的注入</h1><h2 id="注解版自动绑定-Autowired"><a href="#注解版自动绑定-Autowired" class="headerlink" title="注解版自动绑定(@Autowired)"></a>注解版自动绑定(@Autowired)</h2><p>可以让容器知道需要为当前类注入哪些依赖，按照类型进行匹配。</p>
+<h2 id="Qualifier的陪伴"><a href="#Qualifier的陪伴" class="headerlink" title="Qualifier的陪伴"></a>Qualifier的陪伴</h2><p>如果找到两个或者多个同一类型的实例对象，Ioc容器不知道具体需要将哪个对象注入给当前对象，可以使用@Qualifier注解来指定<br>需要哪个一个对象。@Qualifier(“要指定的类的bean的id”)，byName的自动绑定的注解版</p>
+<h2 id="使用JSR250标注依赖注入关系"><a href="#使用JSR250标注依赖注入关系" class="headerlink" title="使用JSR250标注依赖注入关系"></a>使用JSR250标注依赖注入关系</h2><ul>
+<li>@Resource 遵循的是byName自动绑定形式的行为准则，Ioc将根据@Resource所指定的名称，到容器中查找beanName与之对应的实例，<br>然后将查找到的对象实例注入给@Resource所标注的对象中。例如Resource(name=”xxxx”)</li>
+<li>@PostConstruct和@PreDestroy不是服务于依赖注入的，他们主要用于标注对象的生命周期管理相关方法。主要用于对象实例化之后和对象被销毁前<br>想调用的方法。</li>
+<li>@Autowired需要AutowiredAnnotationBeanPostProcessor为它与Ioc容器牵线搭桥<br>JSR250同样也需要需要CommonAnnotationBeanPostProcessor<br>直接用<a href="context:annotation-config" target="_blank" rel="noopener">context:annotation-config</a>配置就搞定以上所有的BeanPostProcessor</li>
+</ul>
+<h2 id="classpath-scanning介绍"><a href="#classpath-scanning介绍" class="headerlink" title="classpath-scanning介绍"></a>classpath-scanning介绍</h2><p>我们需要将相应的bean定义，一个个添加到Ioc容器中的配置文件中，太过麻烦。<br>使用相应的注解对应用程序的相关类进行标注后，classpath-scannning可以从某一顶层包(base-package)开始扫描。扫描到某个类<br>标注了相应的注解后，就会提取该类的相关信息，构建对应的BeanDefinition,然后把构建完的BeanDefinition注册到容器。<br><a href="context:component-scan" target="_blank" rel="noopener">context:component-scan</a> 遍历扫描目标包下面的所有有相关注解的类型，并添加到Ioc容器中。<br><a href="context:component-scan" target="_blank" rel="noopener">context:component-scan</a>默认关注@Component，@Resposity，@Service，@Controller</p>
 
       
     </div>
@@ -485,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/12/Spring2.5的基于注解的注入/" rel="next" title="Spring2.5的基于注解的注入">
-                <i class="fa fa-chevron-left"></i> Spring2.5的基于注解的注入
+              <a href="/2019/05/12/SpringAOP概述及其实现机制/" rel="next" title="SpringAOP概述及其实现机制">
+                <i class="fa fa-chevron-left"></i> SpringAOP概述及其实现机制
               </a>
             
           </div>
@@ -494,6 +491,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/12/AOP概述/" rel="prev" title="AOP概述">
+                AOP概述 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -653,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP-面向切面编程"><span class="nav-number">1.</span> <span class="nav-text">AOP 面向切面编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java平台上AOP的实现机制"><span class="nav-number">2.</span> <span class="nav-text">Java平台上AOP的实现机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态代理-Spring默认使用"><span class="nav-number">2.1.</span> <span class="nav-text">动态代理  Spring默认使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态字节码增强-Spring第二种使用"><span class="nav-number">2.2.</span> <span class="nav-text">动态字节码增强 Spring第二种使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joinpoint-连接点"><span class="nav-number">2.3.</span> <span class="nav-text">Joinpoint 连接点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointCut"><span class="nav-number">2.4.</span> <span class="nav-text">PointCut</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有三种表述方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">有三种表述方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointCut可以进行逻辑运算"><span class="nav-number">2.5.</span> <span class="nav-text">PointCut可以进行逻辑运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advice"><span class="nav-number">2.5.1.</span> <span class="nav-text">Advice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有三种"><span class="nav-number">2.5.2.</span> <span class="nav-text">有三种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aspect"><span class="nav-number">2.6.</span> <span class="nav-text">Aspect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#织入和织入器"><span class="nav-number">2.6.1.</span> <span class="nav-text">织入和织入器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标对象"><span class="nav-number">2.6.2.</span> <span class="nav-text">目标对象</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring2-5的基于注解的注入"><span class="nav-number">1.</span> <span class="nav-text">Spring2.5的基于注解的注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解版自动绑定-Autowired"><span class="nav-number">1.1.</span> <span class="nav-text">注解版自动绑定(@Autowired)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Qualifier的陪伴"><span class="nav-number">1.2.</span> <span class="nav-text">Qualifier的陪伴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JSR250标注依赖注入关系"><span class="nav-number">1.3.</span> <span class="nav-text">使用JSR250标注依赖注入关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classpath-scanning介绍"><span class="nav-number">1.4.</span> <span class="nav-text">classpath-scanning介绍</span></a></li></ol></li></ol></div>
             
 
           </div>
