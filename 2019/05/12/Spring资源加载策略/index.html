@@ -96,20 +96,18 @@
 
 
 
-  <meta name="description" content="#第一篇文章 ##副标题 ###三级标题  列表1 列表2  a 字列表  b 字列表2 列表3百度      &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 12345&amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;	 addasdasdas   &amp;lt;/head&amp;gt; &amp;lt;/html&amp;gt;">
+  <meta name="description" content="Spring加载资源策略ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader  1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext 2.ResourceLoader类型的注入当一个">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://xudongdong256.com/2019/05/12/第一篇博客/index.html">
+<meta property="og:title" content="Spring加载资源策略">
+<meta property="og:url" content="http://xudongdong256.com/2019/05/12/Spring资源加载策略/index.html">
 <meta property="og:site_name" content="xudongdong">
-<meta property="og:description" content="#第一篇文章 ##副标题 ###三级标题  列表1 列表2  a 字列表  b 字列表2 列表3百度      &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 12345&amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;	 addasdasdas   &amp;lt;/head&amp;gt; &amp;lt;/html&amp;gt;">
+<meta property="og:description" content="Spring加载资源策略ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader  1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext 2.ResourceLoader类型的注入当一个">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://image.biaobaiju.com/uploads/20180803/21/1533302764-WOEdINXfAS.jpg">
-<meta property="og:updated_time" content="2019-05-12T10:53:05.091Z">
+<meta property="og:updated_time" content="2019-05-23T10:22:19.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="#第一篇文章 ##副标题 ###三级标题  列表1 列表2  a 字列表  b 字列表2 列表3百度      &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 12345&amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;	 addasdasdas   &amp;lt;/head&amp;gt; &amp;lt;/html&amp;gt;">
-<meta name="twitter:image" content="http://image.biaobaiju.com/uploads/20180803/21/1533302764-WOEdINXfAS.jpg">
+<meta name="twitter:title" content="Spring加载资源策略">
+<meta name="twitter:description" content="Spring加载资源策略ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader  1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext 2.ResourceLoader类型的注入当一个">
 
 
 
@@ -117,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/第一篇博客/">
+  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/Spring资源加载策略/">
 
 
 
@@ -127,7 +125,7 @@
   };
 </script>
 
-  <title>第一篇博客 | xudongdong</title>
+  <title>Spring加载资源策略 | xudongdong</title>
   
 
 
@@ -326,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/第一篇博客/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/Spring资源加载策略/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -343,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一篇博客
+          <h1 class="post-title" itemprop="name headline">Spring加载资源策略
 
               
             
@@ -369,12 +367,24 @@
                 
               
 
-              <time title="Created: 2019-05-12 17:23:24 / Modified: 18:53:05" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
+              <time title="Created: 2019-05-12 17:23:24" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 18:22:19" itemprop="dateModified" datetime="2019-05-23T18:22:19+08:00">2019-05-23</time>
               
             
           </span>
@@ -391,7 +401,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
                 
                 
@@ -426,16 +436,17 @@
       
 
       
-        <p>#第一篇文章</p>
-<p>##副标题</p>
-<p>###三级标题</p>
-<ul>
-<li>列表1</li>
-<li>列表2<br>  a 字列表<br>  b 字列表2</li>
-<li>列表3<br><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a><br><img src="http://image.biaobaiju.com/uploads/20180803/21/1533302764-WOEdINXfAS.jpg" alt="柯基">    </li>
-</ul>
-<p><code>&lt;html&gt;&lt;/html&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">	 addasdasdas</span><br><span class="line">   &lt;/head&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <h1 id="Spring加载资源策略"><a href="#Spring加载资源策略" class="headerlink" title="Spring加载资源策略"></a>Spring加载资源策略</h1><p>ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader </p>
+<h2 id="1-扮演ResourceLoader的角色"><a href="#1-扮演ResourceLoader的角色" class="headerlink" title="1.扮演ResourceLoader的角色"></a>1.扮演ResourceLoader的角色</h2><p>可以加载任何Spring支持的Resource类型<br>ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext</p>
+<h2 id="2-ResourceLoader类型的注入"><a href="#2-ResourceLoader类型的注入" class="headerlink" title="2.ResourceLoader类型的注入"></a>2.ResourceLoader类型的注入</h2><p>当一个bean需要依赖于ResourceLoader来定位查找资源的时候，可以将ApplicationContext直接注入</p>
+<h2 id="3-Resource类型的注入"><a href="#3-Resource类型的注入" class="headerlink" title="3.Resource类型的注入"></a>3.Resource类型的注入</h2><p>容器可以将bean定义文件的字符，转换成相应所需的正确的对象类型，ApplicationContext通过实现EditRegister来注册Spring针对Resource类型<br>PropertyEditor实现到容器中，就可以正确的识别Resource类型的依赖了</p>
+<h2 id="4-在特定的情况下，ApplicationContext的加载行为"><a href="#4-在特定的情况下，ApplicationContext的加载行为" class="headerlink" title="4.在特定的情况下，ApplicationContext的加载行为"></a>4.在特定的情况下，ApplicationContext的加载行为</h2><p>ClassPathXmlApplicationContext 默认在classpath的资源路径下加载资源 无论是否前缀加classpath<br>FileSystemXmlApplicationContext 默认在系统文件下加载资源 除非在前缀加上classpath</p>
+<h1 id="国际化信息支持-I18n"><a href="#国际化信息支持-I18n" class="headerlink" title="国际化信息支持(I18n)"></a>国际化信息支持(I18n)</h1><h2 id="JavaSE-提供的国际化支持"><a href="#JavaSE-提供的国际化支持" class="headerlink" title="JavaSE 提供的国际化支持"></a>JavaSE 提供的国际化支持</h2><h3 id="Locale"><a href="#Locale" class="headerlink" title="Locale"></a>Locale</h3><p>Locale.CHINA代表中国 代码为zh_CN </p>
+<h3 id="ResourceBundle"><a href="#ResourceBundle" class="headerlink" title="ResourceBundle"></a>ResourceBundle</h3><p>用来保存特定的Locale的信息 properties 命名格式 basename+Local代码</p>
+<h2 id="MessageSource和ApplicationContext"><a href="#MessageSource和ApplicationContext" class="headerlink" title="MessageSource和ApplicationContext"></a>MessageSource和ApplicationContext</h2><p>Spring在JavaSE上基础上抽象了国际化信息的访问接口，即为MessageSource<br>ApplicationContext实现了这个接口 即可以当做MessageSource用 可以直接访问Locale信息</p>
+<h3 id="三种MessageSource的具体实现"><a href="#三种MessageSource的具体实现" class="headerlink" title="三种MessageSource的具体实现"></a>三种MessageSource的具体实现</h3><p>staticMessagSource测试 ResourceBundleMessageSource 生产环境  ReloadableResourceBundleMessageSource  可以指定<br>时间段，定期刷新检查底层的properties资源文件是否更变</p>
+<h2 id="MessageSourceAware和MessageSource的注入"><a href="#MessageSourceAware和MessageSource的注入" class="headerlink" title="MessageSourceAware和MessageSource的注入"></a>MessageSourceAware和MessageSource的注入</h2><p>在ApplicationContex启动的时候，会自动识别容器中内容为MessageSourceAware的Bean定义，并将自身作为MeassageSource<br>注入到对象实例中<br>既然MessageSource可以独立使用，为什么让ApplicationContext该接口？<br>在独立运行的应用程序中，直接使用MessageSourcede的影响实现类就行了，在web程序中ApplicationContext,会公开view视图<br>通过标签就可以直接访问国际化信息。</p>
+
       
     </div>
 
@@ -473,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/12/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/12/SpringAOP概述及其实现机制/" rel="next" title="SpringAOP概述及其实现机制">
+                <i class="fa fa-chevron-left"></i> SpringAOP概述及其实现机制
               </a>
             
           </div>
@@ -483,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/12/Spring/" rel="prev" title="Spring">
-                Spring <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/12/SpringAOP第一代/" rel="prev" title="SpringAOP第一代">
+                SpringAOP第一代 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,7 +567,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -625,6 +645,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring加载资源策略"><span class="nav-number">1.</span> <span class="nav-text">Spring加载资源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-扮演ResourceLoader的角色"><span class="nav-number">1.1.</span> <span class="nav-text">1.扮演ResourceLoader的角色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ResourceLoader类型的注入"><span class="nav-number">1.2.</span> <span class="nav-text">2.ResourceLoader类型的注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Resource类型的注入"><span class="nav-number">1.3.</span> <span class="nav-text">3.Resource类型的注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在特定的情况下，ApplicationContext的加载行为"><span class="nav-number">1.4.</span> <span class="nav-text">4.在特定的情况下，ApplicationContext的加载行为</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#国际化信息支持-I18n"><span class="nav-number">2.</span> <span class="nav-text">国际化信息支持(I18n)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaSE-提供的国际化支持"><span class="nav-number">2.1.</span> <span class="nav-text">JavaSE 提供的国际化支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Locale"><span class="nav-number">2.1.1.</span> <span class="nav-text">Locale</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResourceBundle"><span class="nav-number">2.1.2.</span> <span class="nav-text">ResourceBundle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageSource和ApplicationContext"><span class="nav-number">2.2.</span> <span class="nav-text">MessageSource和ApplicationContext</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种MessageSource的具体实现"><span class="nav-number">2.2.1.</span> <span class="nav-text">三种MessageSource的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MessageSourceAware和MessageSource的注入"><span class="nav-number">2.3.</span> <span class="nav-text">MessageSourceAware和MessageSource的注入</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

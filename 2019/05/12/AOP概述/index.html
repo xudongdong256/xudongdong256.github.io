@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext2.ResourceLoader类型的注入当一个bean需要依赖于Resour">
+  <meta name="description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring">
-<meta property="og:url" content="http://xudongdong256.com/2019/05/12/Spring/index.html">
+<meta property="og:title" content="AOP概述">
+<meta property="og:url" content="http://xudongdong256.com/2019/05/12/AOP概述/index.html">
 <meta property="og:site_name" content="xudongdong">
-<meta property="og:description" content="ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext2.ResourceLoader类型的注入当一个bean需要依赖于Resour">
+<meta property="og:description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T09:58:37.496Z">
+<meta property="og:updated_time" content="2019-05-23T10:54:36.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring">
-<meta name="twitter:description" content="ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext2.ResourceLoader类型的注入当一个bean需要依赖于Resour">
+<meta name="twitter:title" content="AOP概述">
+<meta name="twitter:description" content="AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。AOP组件集成到O">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/Spring/">
+  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/AOP概述/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Spring | xudongdong</title>
+  <title>AOP概述 | xudongdong</title>
   
 
 
@@ -324,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/Spring/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/AOP概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring
+          <h1 class="post-title" itemprop="name headline">AOP概述
 
               
             
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 17:58:37" itemprop="dateModified" datetime="2019-05-23T17:58:37+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-23 18:54:36" itemprop="dateModified" datetime="2019-05-23T18:54:36+08:00">2019-05-23</time>
               
             
           </span>
@@ -401,7 +401,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
                 
                 
@@ -436,9 +436,17 @@
       
 
       
-        <p>ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader<br>1.扮演ResourceLoader的角色<br>可以加载任何Spring支持的Resource类型<br>ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext<br>2.ResourceLoader类型的注入<br>当一个bean需要依赖于ResourceLoader来定位查找资源的时候，可以将ApplicationContext直接注入<br>3.Resource类型的注入<br>容器可以将bean定义文件的字符，转换成相应所需的正确的对象类型，ApplicationContext通过实现EditRegister来注册Spring针对Resource类型<br>PropertyEditor实现到容器中，就可以正确的识别Resource类型的依赖了<br>4.在特定的情况下，ApplicationContext的加载行为<br>ClassPathXmlApplicationContext 默认在classpath的资源路径下加载资源 无论是否前缀加classpath<br>FileSystemXmlApplicationContext 默认在系统文件下加载资源 除非在前缀加上classpath</p>
-<p>5.2国际化信息支持(I18n)<br>1.JavaSE 提供的国际化支持<br>1.1Locale<br>Locale.CHINA代表中国 代码为zh_CN<br>1.2ResourceBundle<br>用来保存特定的Locale的信息 properties 命名格式 basename+Local代码<br>2.MessageSource和ApplicationContext<br>Spring在JavaSE上基础上抽象了国际化信息的访问接口，即为MessageSource<br>ApplicationContext实现了这个接口 即可以当做MessageSource用 可以直接访问Locale信息<br>2.1 三种MessageSource的具体实现<br>staticMessagSource测试 ResourceBundleMessageSource 生产环境  ReloadableResourceBundleMessageSource  可以指定<br>时间段，定期刷新检查底层的properties资源文件是否更变<br>2.2MessageSourceAware和MessageSource的注入<br>在ApplicationContex启动的时候，会自动识别容器中内容为MessageSourceAware的Bean定义，并将自身作为MeassageSource<br>注入到对象实例中<br>既然MessageSource可以独立使用，为什么让ApplicationContext该接口？<br>在独立运行的应用程序中，直接使用MessageSourcede的影响实现类就行了，在web程序中ApplicationContext,会公开view视图<br>通过标签就可以直接访问国际化信息。</p>
-<p>5.3 容器内部时间发布<br>5.3.1 自定义事件发布</p>
+        <h1 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP 面向切面编程"></a>AOP 面向切面编程</h1><p>在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，<br>所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。<br>使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AOP是OOP的一种补足。<br>AOP组件集成到OOP组件的过程叫做织入过程。</p>
+<h1 id="Java平台上AOP的实现机制"><a href="#Java平台上AOP的实现机制" class="headerlink" title="Java平台上AOP的实现机制"></a>Java平台上AOP的实现机制</h1><h2 id="动态代理-Spring默认使用"><a href="#动态代理-Spring默认使用" class="headerlink" title="动态代理  Spring默认使用"></a>动态代理  Spring默认使用</h2><p>为相应的接口生成对应的代理对象，由代理对象将横切关注点逻辑封装到InvocationHandler中，系统运行时期，将横切逻辑切入到相应的代理类中，<br>然后以动态代理的逻辑工作，就把系统需求和业务需求整合到一起了。 缺点 运行期间使用反射，对于编译后的静态类的执行性能不好  只针对接口</p>
+<h2 id="动态字节码增强-Spring第二种使用"><a href="#动态字节码增强-Spring第二种使用" class="headerlink" title="动态字节码增强 Spring第二种使用"></a>动态字节码增强 Spring第二种使用</h2><p>使用GGLIB工具库，在需要织入横切逻辑的类在运行期间，就可以为其生成子类，将横切逻辑加入到这些子类中，程序执行的是这些动态生成的子类。<br>final类无法子类化扩展</p>
+<h2 id="Joinpoint-连接点"><a href="#Joinpoint-连接点" class="headerlink" title="Joinpoint 连接点"></a>Joinpoint 连接点</h2><p>进行织入操作的执行点</p>
+<h2 id="PointCut"><a href="#PointCut" class="headerlink" title="PointCut"></a>PointCut</h2><p>哪些Joinpoint需要织入横切逻辑的信息</p>
+<h3 id="有三种表述方式"><a href="#有三种表述方式" class="headerlink" title="有三种表述方式"></a>有三种表述方式</h3><p>1.直接指定JoinPoint所在的方法名称<br>2.正则表达式<br>3.PointCut表述语言</p>
+<h2 id="PointCut可以进行逻辑运算"><a href="#PointCut可以进行逻辑运算" class="headerlink" title="PointCut可以进行逻辑运算"></a>PointCut可以进行逻辑运算</h2><h3 id="Advice"><a href="#Advice" class="headerlink" title="Advice"></a>Advice</h3><p>代表织入到Joinpoint的横切逻辑<br>1.BeforeAdvice在Jointpoint指定位置之前执行，一般不会打断程序的执行流程，除非在BeforeAdvice抛出异常<br>2.AfterAdvice在连接点之后执行的advice</p>
+<h3 id="有三种"><a href="#有三种" class="headerlink" title="有三种"></a>有三种</h3><p>1.After returning Advice 在正常的流程执行完之后，才会执行，没有异常<br>2.After throwing Advice 在抛出异常的情况下才会执行<br>3.After Advice 无论程序怎么样在程序结束后都会执行 相当于finally<br>3.AroundAdvice 在连接点执行的前后执行<br>4.Introduction 为原有的对象添加新特性或者新行为  性能高 对象在使用的时候 已经编译好了织入完成</p>
+<h2 id="Aspect"><a href="#Aspect" class="headerlink" title="Aspect"></a>Aspect</h2><p>是对横切关注点模块化封装的AOP概念实体 包含多个 PointCut和Advice</p>
+<h3 id="织入和织入器"><a href="#织入和织入器" class="headerlink" title="织入和织入器"></a>织入和织入器</h3><p>将横切关注点的逻辑集成到程序中叫做织入<br>执行织入操作的叫做织入器 ProxyFactory SpringAOP最通用的织入器</p>
+<h3 id="目标对象"><a href="#目标对象" class="headerlink" title="目标对象"></a>目标对象</h3><p>在织入过程中被织入的对象叫做目标对象</p>
 
       
     </div>
@@ -477,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/12/第一篇博客/" rel="next" title="第一篇博客">
-                <i class="fa fa-chevron-left"></i> 第一篇博客
+              <a href="/2019/05/12/SpringAOP第一代/" rel="next" title="SpringAOP第一代">
+                <i class="fa fa-chevron-left"></i> SpringAOP第一代
               </a>
             
           </div>
@@ -529,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,7 +564,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -625,6 +642,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP-面向切面编程"><span class="nav-number">1.</span> <span class="nav-text">AOP 面向切面编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java平台上AOP的实现机制"><span class="nav-number">2.</span> <span class="nav-text">Java平台上AOP的实现机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态代理-Spring默认使用"><span class="nav-number">2.1.</span> <span class="nav-text">动态代理  Spring默认使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态字节码增强-Spring第二种使用"><span class="nav-number">2.2.</span> <span class="nav-text">动态字节码增强 Spring第二种使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joinpoint-连接点"><span class="nav-number">2.3.</span> <span class="nav-text">Joinpoint 连接点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointCut"><span class="nav-number">2.4.</span> <span class="nav-text">PointCut</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有三种表述方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">有三种表述方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointCut可以进行逻辑运算"><span class="nav-number">2.5.</span> <span class="nav-text">PointCut可以进行逻辑运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advice"><span class="nav-number">2.5.1.</span> <span class="nav-text">Advice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有三种"><span class="nav-number">2.5.2.</span> <span class="nav-text">有三种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aspect"><span class="nav-number">2.6.</span> <span class="nav-text">Aspect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#织入和织入器"><span class="nav-number">2.6.1.</span> <span class="nav-text">织入和织入器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标对象"><span class="nav-number">2.6.2.</span> <span class="nav-text">目标对象</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

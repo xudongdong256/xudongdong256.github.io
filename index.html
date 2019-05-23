@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/Spring/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/AOP概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -340,7 +340,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/12/Spring/" class="post-title-link" itemprop="url">Spring</a>
+                <a href="/2019/05/12/AOP概述/" class="post-title-link" itemprop="url">AOP概述</a>
               
             
           </h1>
@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-23 17:58:37" itemprop="dateModified" datetime="2019-05-23T17:58:37+08:00">2019-05-23</time>
+                <time title="Modified: 2019-05-23 18:54:36" itemprop="dateModified" datetime="2019-05-23T18:54:36+08:00">2019-05-23</time>
               
             
           </span>
@@ -399,7 +399,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
                 
                 
@@ -437,13 +437,13 @@
         
           
             <p>
-              ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext2.ResourceLoader类型的
+              AOP 面向切面编程在开发中，我们需要对系统进行监控，就会对业务需求的实现对象添加日志记录功能，或者我们需要对业务方法的执行需要一定的权限，进行安全检查，所以我们在方法执行前需要进行安全检查。系统需求会破坏我们的各个业务模块上的代码，系统需求和实现的对应关系会变成1:N，系统会难以维护。使用AOP可以对系统需求进行模块化的组织，不再破坏业务代码的完整性，AO
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/05/12/Spring/#more" rel="contents">
+              <a class="btn" href="/2019/05/12/AOP概述/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -503,7 +503,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/第一篇博客/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/SpringAOP第一代/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -523,7 +523,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/12/第一篇博客/" class="post-title-link" itemprop="url">第一篇博客</a>
+                <a href="/2019/05/12/SpringAOP第一代/" class="post-title-link" itemprop="url">SpringAOP第一代</a>
               
             
           </h1>
@@ -548,12 +548,24 @@
                 
               
 
-              <time title="Created: 2019-05-12 17:23:24 / Modified: 18:53:05" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
+              <time title="Created: 2019-05-12 17:23:24" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 18:21:50" itemprop="dateModified" datetime="2019-05-23T18:21:50+08:00">2019-05-23</time>
               
             
           </span>
@@ -570,7 +582,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
                 
                 
@@ -608,22 +620,14 @@
         
           
             <p>
-              #第一篇文章
-##副标题
-###三级标题
-
-列表1
-列表2  a 字列表  b 字列表2
-列表3百度    
-
-&lt;html&gt;&lt;/html&gt;
-&lt;html&gt;   &lt;head&gt;	 addasdasdas   &lt;/head&gt; &lt;/html&gt;
-              
+              SpringAOP第一代SpringAOP的Joinpoint只支持方法执行类型的Joinpoint
+SpringAOP的PointcutSpring提供了Pointcut作为最顶层的接口，来匹配系统上的相应的Pointcut，有类级别上的匹配和方法级别上的匹配，分别是classFilter和methodMatch，当Pointcut的类型为TruePoin
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/05/12/第一篇博客/#more" rel="contents">
+              <a class="btn" href="/2019/05/12/SpringAOP第一代/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -683,7 +687,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/Spring资源加载策略/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嘘咚">
@@ -703,7 +707,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+                <a href="/2019/05/12/Spring资源加载策略/" class="post-title-link" itemprop="url">Spring加载资源策略</a>
               
             
           </h1>
@@ -728,12 +732,46 @@
                 
               
 
-              <time title="Created: 2019-05-12 16:16:25" itemprop="dateCreated datePublished" datetime="2019-05-12T16:16:25+08:00">2019-05-12</time>
+              <time title="Created: 2019-05-12 17:23:24" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 18:22:19" itemprop="dateModified" datetime="2019-05-23T18:22:19+08:00">2019-05-23</time>
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -766,13 +804,202 @@
         
           
             <p>
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask
+              Spring加载资源策略ApplicationContext 统一加载资源的策略 是因为实现了 ResourceLoader 
+1.扮演ResourceLoader的角色可以加载任何Spring支持的Resource类型ex:ClassPathXmlApplicationContext,FileSystemXmlApplicationContext
+2.Re
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/05/12/hello-world/#more" rel="contents">
+              <a class="btn" href="/2019/05/12/Spring资源加载策略/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/SpringAOP概述及其实现机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="嘘咚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/u=1289561194,3753573380&fm=27&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xudongdong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/12/SpringAOP概述及其实现机制/" class="post-title-link" itemprop="url">SpringAOP概述及其实现机制</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-12 17:23:24" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 18:59:27" itemprop="dateModified" datetime="2019-05-23T18:59:27+08:00">2019-05-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              SpringAOP概述及其实现机制Spring框架的核心 依赖注入 AOP 轻量级服务的抽象，SpringAOP的实现方式动态代理模式和字节码生成技术，都是由Java语言实现的AOL，都是由代理对象来完成AOP功能。代理模式(静态代理模式)有四种角色
+
+subject 是被代理对象资源的抽象
+subjectImpl 是被代理对象的具体对象
+subjectPr
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/12/SpringAOP概述及其实现机制/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -861,7 +1088,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

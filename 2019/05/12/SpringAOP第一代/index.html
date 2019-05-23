@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="SpringAOP第一代SpringAOP的Joinpoint只支持方法执行类型的Joinpoint SpringAOP的PointcutSpring提供了Pointcut作为最顶层的接口，来匹配系统上的相应的Pointcut，有类级别上的匹配和方法级别上的匹配，分别是classFilter和methodMatch，当Pointcut的类型为TruePointcut，就会对系统的所有对象，以及对象">
+<meta name="keywords" content="导航,分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringAOP第一代">
+<meta property="og:url" content="http://xudongdong256.com/2019/05/12/SpringAOP第一代/index.html">
+<meta property="og:site_name" content="xudongdong">
+<meta property="og:description" content="SpringAOP第一代SpringAOP的Joinpoint只支持方法执行类型的Joinpoint SpringAOP的PointcutSpring提供了Pointcut作为最顶层的接口，来匹配系统上的相应的Pointcut，有类级别上的匹配和方法级别上的匹配，分别是classFilter和methodMatch，当Pointcut的类型为TruePointcut，就会对系统的所有对象，以及对象">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-23T10:21:50.337Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringAOP第一代">
+<meta name="twitter:description" content="SpringAOP第一代SpringAOP的Joinpoint只支持方法执行类型的Joinpoint SpringAOP的PointcutSpring提供了Pointcut作为最顶层的接口，来匹配系统上的相应的Pointcut，有类级别上的匹配和方法级别上的匹配，分别是classFilter和methodMatch，当Pointcut的类型为TruePointcut，就会对系统的所有对象，以及对象">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://xudongdong256.com/2019/05/12/SpringAOP第一代/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SpringAOP第一代 | xudongdong</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xudongdong</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-首页"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xudongdong256.com/2019/05/12/SpringAOP第一代/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="嘘咚">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/u=1289561194,3753573380&fm=27&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xudongdong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringAOP第一代
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-12 17:23:24" itemprop="dateCreated datePublished" datetime="2019-05-12T17:23:24+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-23 18:21:50" itemprop="dateModified" datetime="2019-05-23T18:21:50+08:00">2019-05-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SpringAOP第一代"><a href="#SpringAOP第一代" class="headerlink" title="SpringAOP第一代"></a>SpringAOP第一代</h1><h2 id="SpringAOP的Joinpoint"><a href="#SpringAOP的Joinpoint" class="headerlink" title="SpringAOP的Joinpoint"></a>SpringAOP的Joinpoint</h2><p>只支持方法执行类型的Joinpoint</p>
+<h2 id="SpringAOP的Pointcut"><a href="#SpringAOP的Pointcut" class="headerlink" title="SpringAOP的Pointcut"></a>SpringAOP的Pointcut</h2><p>Spring提供了Pointcut作为最顶层的接口，来匹配系统上的相应的Pointcut，有类级别上的匹配和方法级别上的匹配，<br>分别是classFilter和methodMatch，当Pointcut的类型为TruePointcut，就会对系统的所有对象，以及对象上的Pointcut进行匹配<br>classFilter 就是对Joinpoint所处的对象上进行class匹配，用matches方法进行判断，当不匹配时，就不会对对象进行织入。<br>methodMatch 分为两种匹配 一个是带参数的，另外一个是不带参数的，当不带参数的matches为true和isRuntime范围为true时，<br>才会进行带方法参数的判断。假如如果只是在登录方法之前计数的话，就不用用到登录方法的参数了，isRuntime返回false就可以了。<br>当Runtime返回true时称作DynamicMethodMatcher 会每次都对方法的调用的参数进行匹配，效率不高。<br>当Runtime返回false时称作StaticMethodMatcher 不会对方法的参数进行匹配，可以在框架内部缓存，效率较高。</p>
+<h1 id="常见的Ponitcut"><a href="#常见的Ponitcut" class="headerlink" title="常见的Ponitcut"></a>常见的Ponitcut</h1><h2 id="NameMatchMethodPointcut"><a href="#NameMatchMethodPointcut" class="headerlink" title="NameMatchMethodPointcut"></a>NameMatchMethodPointcut</h2><p>对方法名称进行匹配</p>
+<h2 id="RegexMatchMethodPointcut"><a href="#RegexMatchMethodPointcut" class="headerlink" title="RegexMatchMethodPointcut"></a>RegexMatchMethodPointcut</h2><p>利用正则表达式进行匹配</p>
+<h2 id="AnnotationMatcingPointcut"><a href="#AnnotationMatcingPointcut" class="headerlink" title="AnnotationMatcingPointcut"></a>AnnotationMatcingPointcut</h2><p>识别注解进行匹配，有基于方法的和基于类的，可以组合使用。</p>
+<h2 id="ComsablePointcut"><a href="#ComsablePointcut" class="headerlink" title="ComsablePointcut"></a>ComsablePointcut</h2><p>可以对Pointcut进行逻辑运算，来匹配相应的Pointcut</p>
+<h2 id="ControlFlowPointcut"><a href="#ControlFlowPointcut" class="headerlink" title="ControlFlowPointcut"></a>ControlFlowPointcut</h2><p>可以指定当某个类别的类访问时，才会进行横切逻辑的执行，其他类不会执行。</p>
+<h1 id="可以对Pointcut进行拓展"><a href="#可以对Pointcut进行拓展" class="headerlink" title="可以对Pointcut进行拓展"></a>可以对Pointcut进行拓展</h1><h2 id="StaticMethodMatcherPointcut"><a href="#StaticMethodMatcherPointcut" class="headerlink" title="StaticMethodMatcherPointcut"></a>StaticMethodMatcherPointcut</h2><h3 id="默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过"><a href="#默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过" class="headerlink" title="默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过"></a>默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过</h3><p>setClassFilter进行设置.</p>
+<h3 id="Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。"><a href="#Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。" class="headerlink" title="Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。"></a>Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。</h3><h2 id="DynamicMethodMatcherPointcut"><a href="#DynamicMethodMatcherPointcut" class="headerlink" title="DynamicMethodMatcherPointcut"></a>DynamicMethodMatcherPointcut</h2><h3 id="默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过-1"><a href="#默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过-1" class="headerlink" title="默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过"></a>默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过</h3><p>setClassFilter进行设置.</p>
+<h3 id="Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。"><a href="#Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。" class="headerlink" title="Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。"></a>Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。</h3>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/导航/" rel="tag"># 导航</a>
+          
+            <a href="/tags/分享/" rel="tag"># 分享</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/12/Spring资源加载策略/" rel="next" title="Spring加载资源策略">
+                <i class="fa fa-chevron-left"></i> Spring加载资源策略
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/12/AOP概述/" rel="prev" title="AOP概述">
+                AOP概述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/u=1289561194,3753573380&fm=27&gp=0.jpg" alt="嘘咚">
+            
+              <p class="site-author-name" itemprop="name">嘘咚</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xudongdong256" title="GitHub &rarr; https://github.com/xudongdong256" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringAOP第一代"><span class="nav-number">1.</span> <span class="nav-text">SpringAOP第一代</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringAOP的Joinpoint"><span class="nav-number">1.1.</span> <span class="nav-text">SpringAOP的Joinpoint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringAOP的Pointcut"><span class="nav-number">1.2.</span> <span class="nav-text">SpringAOP的Pointcut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的Ponitcut"><span class="nav-number">2.</span> <span class="nav-text">常见的Ponitcut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NameMatchMethodPointcut"><span class="nav-number">2.1.</span> <span class="nav-text">NameMatchMethodPointcut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegexMatchMethodPointcut"><span class="nav-number">2.2.</span> <span class="nav-text">RegexMatchMethodPointcut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AnnotationMatcingPointcut"><span class="nav-number">2.3.</span> <span class="nav-text">AnnotationMatcingPointcut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ComsablePointcut"><span class="nav-number">2.4.</span> <span class="nav-text">ComsablePointcut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ControlFlowPointcut"><span class="nav-number">2.5.</span> <span class="nav-text">ControlFlowPointcut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可以对Pointcut进行拓展"><span class="nav-number">3.</span> <span class="nav-text">可以对Pointcut进行拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#StaticMethodMatcherPointcut"><span class="nav-number">3.1.</span> <span class="nav-text">StaticMethodMatcherPointcut</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过"><span class="nav-number">3.1.1.</span> <span class="nav-text">默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。"><span class="nav-number">3.1.2.</span> <span class="nav-text">Runtime会默认返回false，三个参数的方法会抛出一个异常，所以只要实现两个参数的方法就可以了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DynamicMethodMatcherPointcut"><span class="nav-number">3.2.</span> <span class="nav-text">DynamicMethodMatcherPointcut</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认的实现均为ClassFilter-TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">默认的实现均为ClassFilter.TRUE，忽略类型类的类型匹配，如果有需要对类类型进行限制可以通过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。"><span class="nav-number">3.2.2.</span> <span class="nav-text">Runtime默认返回true，两个参数的方法会默认返回true，只需要实现三个参数的方法就可以了。</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">嘘咚</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
